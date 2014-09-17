@@ -6,6 +6,7 @@ env = ENV["RACK_ENV"] || "development"
 DataMapper.setup(:default, "postgres://localhost/chitter_#{env}")
 
 require './lib/peep'
+require './lib/user'
 
 DataMapper.finalize
 
@@ -19,5 +20,17 @@ end
 post '/peeps' do 
 	message = params["message"]
 	Peep.create(:message => message)
+	redirect to('/')
+end
+
+get '/users/new' do 
+	erb :"users/new"
+end
+
+post '/users' do 
+	User.create(:email => params[:email], 
+							:password => params[:password], 
+							:username => params[:username], 
+							:name => params[:name])
 	redirect to('/')
 end
