@@ -1,11 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'sinatra'
+gem 'bcrypt-ruby'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
+gem 'sinatra'
 
 group :development, :test do 
-	gem 'cabybara'
+	gem 'capybara'
 	gem 'database_cleaner'
 	gem 'rspec'
 end
