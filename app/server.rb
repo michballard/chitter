@@ -1,18 +1,14 @@
 require 'sinatra'
 require 'data_mapper'
+require 'rack-flash'
 require './lib/peep'
 require './lib/user'
-
-env = ENV["RACK_ENV"] || "development"
-
-DataMapper.setup(:default, "postgres://localhost/chitter_#{env}")
-
-DataMapper.finalize
-
-DataMapper.auto_upgrade!
+require_relative 'helpers/application'
+require_relative 'data_mapper_setup.rb'
 
 enable :sessions
 set :session_secret, 'super secret'
+use Rack::Flash
 
 get '/' do 
 	@peeps = Peep.all
@@ -31,18 +27,16 @@ get '/users/new' do
 end
 
 post '/users' do 
-	@user = User.create(:email => params[:email], 
+	@user = User.new(:email => params[:email], 
 							:password => params[:password], 
+							:password_confirmation => params[:password_confirmation],
 							:username => params[:username], 
 							:name => params[:name])
-	session[:user_id] = @user.id
-	redirect to('/')
-end
-
-helpers do 
-
-	def current_user
-		@current_user ||=User.get(session[:user_id]) if session[:user_id]
+	if @user.save
+		session[:user_id] = @user.id
+		redirect to('/')
+	else
+		flash[:notice] = "Sorry, your passwords don't match"
+		erb :"users/new"
 	end
-
 end
