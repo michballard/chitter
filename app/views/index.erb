@@ -1,12 +1,20 @@
 <ul>
 	<% @peeps.each do |peep| %>
-		<li><a href="<%= peep.username %>"><%= peep.message %></a></li>
+		<li>
+			<a href="<%= peep.username %>"><%= peep.message %></a>
+			<span class="source">
+				added by
+				<a href="<%= peep.username %>">
+					<%= peep.username %>
+				</a>
+			</span>
+		</li>
 	<% end %>
 </ul>
 
 <div id="new-peep">
-<form action="/peeps" method="post">
-	Peep message: <input type="text" name="message">
-	<input type="submit" value="Add peep">
-</form>
+	<form action="/peeps" method="post">
+		Peep message: <input type="text" name="message">
+		<input type="submit" value="Add peep">
+	</form>
 </div>

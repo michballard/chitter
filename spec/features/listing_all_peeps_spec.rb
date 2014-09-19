@@ -5,13 +5,24 @@ describe "Listing All Peeps" do
 	feature "User views the list of peeps" do 
 
 		before(:each) {
-			Peep.create(:username => "michelle", 
-									:message => "Hello world!")
+			Peep.create(:username => "tester", 
+									:message => "Hello world,", 
+									:time_created => Timecop.freeze(Time.local(2014, 9, 10, 12, 00, 0)))
+			Peep.create(:username => "tester", 
+									:message => "How are you?", 
+									:time_created => Timecop.freeze(Time.local(2014, 9, 10, 12, 15, 0)))
 		}
 
 		scenario "when opening the home page" do 
 			visit '/'
-			expect(page).to have_content("Hello world!")
+			expect(page).to have_content("Hello world,")
+			expect(page).to have_content("How are you?")
+			expect(page).to have_content("tester")
+			expect(page).to have_content("tester")
+		end
+
+		scenario "listed in chronological order" do
+			# add this scenario
 		end
 
 	end
