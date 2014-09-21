@@ -1,4 +1,4 @@
-<ul>
+<ul id="peeps-list">
 	<% @peeps.each do |peep| %>
 		<li>
 			<a href="<%= peep.username %>"><%= peep.message %></a>
@@ -7,6 +7,11 @@
 				<a href="<%= peep.username %>">
 					<%= peep.username %>
 				</a>
+			</span>
+			<span class="time_added">
+				on
+				<a href="<%= peep.username %>">
+					<%= peep.time_created.strftime("%H:%M") %>				
 			</span>
 		</li>
 	<% end %>
