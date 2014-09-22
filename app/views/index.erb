@@ -1,17 +1,16 @@
 <ul id="peeps-list">
 	<% @peeps.sort_by(&:time_created).reverse.each do |peep| %>
 		<li>
-			<a href="<%= peep.username %>"><%= peep.message %></a>
-			<span class="source">
-				added by
-				<a href="<%= peep.username %>">
+			<span class="peep-author">
+				<strong>
 					<%= peep.username %>
-				</a>
+				</strong>
 			</span>
-			<span class="time_added">
-				on
-				<a href="<%= peep.username %>">
-					<%= peep.time_created.strftime("%-d %b %y %H:%M") %>				
+			<span class="peep-time">
+				<%= peep.time_created.strftime("%-d %b %y %H:%M") %>  
+			</span>
+			<span class="peep-message">
+				<%= peep.message %>
 			</span>
 		</li>
 	<% end %>
@@ -19,7 +18,7 @@
 
 <div id="new-peep">
 	<form action="/peeps" method="post">
-		Peep message: <input type="text" name="message">
+		<input type="text" name="message" placeholder="Peep message">
 		<input type="submit" value="Add peep">
 	</form>
 </div>
