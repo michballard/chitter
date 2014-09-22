@@ -1,9 +1,14 @@
 <ul id="peeps-list">
 	<% @peeps.sort_by(&:time_created).reverse.each do |peep| %>
 		<li>
+			<span class="peep-name">
+				<strong>
+					<%= peep.name %>
+				</strong>
+			</span>
 			<span class="peep-author">
 				<strong>
-					<%= peep.username %>
+					(<%= peep.username %>)
 				</strong>
 			</span>
 			<span class="peep-time">

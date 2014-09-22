@@ -21,10 +21,6 @@ describe "Listing All Peeps" do
 			expect(page).to have_content("tester")
 		end
 
-		scenario "listed in chronological order" do
-			# add this scenario
-		end
-
 	end
 
 end 

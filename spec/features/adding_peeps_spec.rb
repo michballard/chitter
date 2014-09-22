@@ -1,4 +1,7 @@
 require 'spec_helper'
+require_relative 'helpers/session'
+
+include SessionHelpers
 
 describe "Adding Peeps" do 
 
@@ -13,16 +16,17 @@ describe "Adding Peeps" do
 			expect(peep.message).to eq("Hello world!")
 		end
 
-		# add that user cannot add peep when not signed in
-		# user cannot see peep form when not signed in, only peeps
-
 		def add_peep(message)
+			User.create(:email => "test@test.com", 
+									:password => "test", 
+									:password_confirmation => "test", 
+									:username => "testname", 
+									:name => "Test")
+			sign_in("test@test.com", "test")
 			within('#new-peep') do 
 				fill_in 'message', :with => message
 				click_button 'Add peep'
 			end
 		end
-
 	end 
-
 end
