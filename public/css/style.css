@@ -1,6 +1,45 @@
 body {
-	margin: 0;
 	font-family: Helvetica, Arial, Sans-serif;
-	background-image: url(../images/extra_clean_paper.png);
+	background-image: url(../images/floral_design.jpg);
   color: #333; 
+}
+
+button {
+	color: #ef5b37;
+}
+
+header {
+	height: 40px;
+	background-color: #c2b648;
+	color: white;
+	display: flex;
+	padding: 0 20px;
+}
+
+header > * {
+	margin: auto 0;
+}
+
+header #logo {
+	display: flex;
+	margin-right: 20px;
+	font-size: 25px;
+}
+
+header a {
+	color: white;
+}
+
+header #user-links {
+	flex: 1;
+	-webkit-flex: 1;
+	text-align: right;
+}
+
+header #user-links > * {
+	display: inline-block;
+}
+
+header #user-links #welcome-message {
+	font-size: 20px;
 }
