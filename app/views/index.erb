@@ -1,29 +1,5 @@
 <ul id="peeps-list">
 	<% @peeps.sort_by(&:time_created).reverse.each do |peep| %>
-		<li>
-			<span class="peep-name">
-				<strong>
-					<%= peep.name %>
-				</strong>
-			</span>
-			<span class="peep-author">
-				<strong>
-					(<%= peep.username %>)
-				</strong>
-			</span>
-			<span class="peep-time">
-				<%= peep.time_created.strftime("%-d %b %y %H:%M") %>  
-			</span>
-			<span class="peep-message">
-				<%= peep.message %>
-			</span>
-		</li>
+		<%= partial :peep, :locals => {:peep => peep} %>
 	<% end %>
 </ul>
-
-<div id="new-peep">
-	<form action="/peeps" method="post">
-		<input type="text" name="message" placeholder="Peep message">
-		<input type="submit" value="Add peep">
-	</form>
-</div>

@@ -1,0 +1,18 @@
+<li class="peep">
+	<span class="peep-name">
+		<strong>
+			<%= peep.name %>
+		</strong>
+	</span>
+	<span class="peep-author">
+		<strong>
+			(<%= peep.username %>)
+		</strong>
+	</span>
+	<span class="peep-time">
+		<%= peep.time_created.strftime("%-d %b %y %H:%M") %>  
+	</span>
+	<span class="peep-message">
+		"<%= peep.message %>"
+	</span>
+</li>

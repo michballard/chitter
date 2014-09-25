@@ -1,3 +1,7 @@
+get '/peeps/new' do 
+	erb :"peeps/new"
+end
+
 post '/peeps' do 
 	message = params["message"]
 	time = Time.now

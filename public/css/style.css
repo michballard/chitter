@@ -1,45 +1,183 @@
-body {
-	font-family: Helvetica, Arial, Sans-serif;
-	background-image: url(../images/floral_design.jpg);
-  color: #333; 
+* {
+  box-sizing: border-box;
 }
 
-button {
-	color: #ef5b37;
+body {
+	font-family: Georgia, Serif;
+	background-image: url(../images/floral_design.jpg);
 }
 
 header {
-	height: 40px;
-	background-color: #c2b648;
+	height: 50px;
+	background-color: #6e4a4a;
 	color: white;
 	display: flex;
 	padding: 0 20px;
 }
 
-header > * {
-	margin: auto 0;
+	header > * {
+		margin: auto 0;
+	}
+
+	header #logo {
+		display: flex;
+		margin-right: 20px;
+		font-size: 30px;
+	}
+
+	header a {
+		color: white;
+	}
+
+	header #user-links {
+		flex: 1;
+		-webkit-flex: 1;
+		text-align: right;
+	}
+
+	header #user-links > * {
+		display: inline-block;
+	}
+
+	header #user-links #welcome-message {
+		font-size: 20px;
+	}
+
+a {
+	text-decoration: none;
 }
 
-header #logo {
+	.button {
+	  display: inline-block;
+	  width: 110px;
+	  border: 2px solid white;
+    background-color: #ee5a32;
+	  color: white;
+	  padding: 5px 10px;
+	  text-align: center;
+	  border-radius: 4px;
+	  margin-left: 5px;
+	  margin-right: 5px;
+	  text-shadow: 0 0 2px rgba(0,0,0, 0.4);
+	  cursor: pointer;
+	}
+
+	.button.highlighted {
+	  background-color: #9dbcaa;
+	}
+
+#container {
+	background-color: white;
+	margin: 40px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  padding: 10px;
+}
+
+h1 {
+	font-size: 22px;
+}
+
+.peep {
+  background-color: #f2f4df;
+  box-shadow: 0 0 5px rgba(0,0,0,0.4);
+  margin: 10px inherit;
+  padding: 15px 10px;
+}
+
+  .peep .peep-name {
+    letter-spacing: 1px;
+    text-transform: capitalize;
+  }
+
+  .peep .peep-author {
+    letter-spacing: 1px;
+  }
+
+  .peep .peep-message {
+    margin: 10px 10px 10px 25px;
+  }
+
+  .peep .peep-time {
+    float: right;
+    font-size: 12px;
+  }
+
+footer {
 	display: flex;
-	margin-right: 20px;
-	font-size: 25px;
+	background-color: white;
 }
 
-header a {
-	color: white;
+  footer > * {
+    margin: auto inherit;
+  }
+
+  footer img {
+    vertical-align: top;
+  }
+
+  footer #technologies {
+    -webkit-flex: 1;
+    flex: 1;
+  }
+
+  footer p {
+    padding: 5px 25px;
+  }
+
+.flash {
+	text-align: center;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 4px;
+	box-shadow: 0 0 3px rgba(0,0,0,0.4);
+	color: white;	
 }
 
-header #user-links {
-	flex: 1;
-	-webkit-flex: 1;
-	text-align: right;
+	.flash.notice {
+		background-color: rgba(67,183,120,1.75);
+	}
+
+	.flash.error {
+		background-color: rgba(169,29,42,0.75);
+	}
+
+/*Ryan Fait sticky footer*/
+
+html, body {
+	height: 100%;
 }
 
-header #user-links > * {
-	display: inline-block;
+.wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -70px;
 }
 
-header #user-links #welcome-message {
-	font-size: 20px;
+footer {
+	display: flex;
+	background-color: white;
+	font-size: 70px;
+}
+
+	footer > * {
+		margin: auto inherit;
+	}
+
+	footer img {
+		vertical-align: top;
+	}
+
+	footer #technologies {
+		-webkit-flex: 1;
+		flex: 1;
+		font-size: 12px;
+	}
+
+	footer p {
+		padding: 5px 25px;
+	}
+
+.footer, .push {
+	height: 70px;
 }
