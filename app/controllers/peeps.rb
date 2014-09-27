@@ -1,5 +1,5 @@
 get '/peeps/new' do 
-	erb :"peeps/new"
+	  erb :"peeps/new"
 end
 
 post '/peeps' do 
