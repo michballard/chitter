@@ -23,6 +23,7 @@ describe "Adding Peeps" do
 									:username => "testname", 
 									:name => "Test")
 			sign_in("test@test.com", "test")
+			visit '/peeps/new'
 			within('#new-peep') do 
 				fill_in 'message', :with => message
 				click_button 'Add peep'
