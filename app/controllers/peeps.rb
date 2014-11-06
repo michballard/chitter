@@ -1,5 +1,9 @@
-get '/peeps/new' do 
+get '/peeps/new' do
+  if current_user
 	  erb :"peeps/new"
+	else
+    redirect to "/"
+	end
 end
 
 post '/peeps' do 
