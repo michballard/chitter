@@ -1,6 +1,8 @@
 | [Makers Academy](http://www.makersacademy.com) | Week 6 | Friday Challenge |
 | ------ | ------ | ------ |
 
+[![Code Climate](https://codeclimate.com/github/michballard/chitter/badges/gpa.svg)](https://codeclimate.com/github/michballard/chitter)
+
 Chitter
 =======
 
