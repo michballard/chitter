@@ -6,6 +6,10 @@ Chitter
 
 The aim of this project is to create a Twitter clone that allows users to post messages to a public stream.  
 
+<strong>Screenshot</strong>
+![Screenshot](/public/images/screenshot.png)
+
+
 Features
 --------
 This website allows the following functionality:
@@ -38,4 +42,19 @@ Technologies used
 - Rspec
 - Timecop
 
+How to run this app
+-------------------
+Clone this repository:
+```shell
+$ git@github.com:michballard/chitter.git
+```
 
+Run the server:
+```shell
+$ rackup
+```
+
+Open on your browser:
+```
+localhost:9292
+```
