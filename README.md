@@ -46,7 +46,7 @@ Technologies used
 
 How to view this app
 --------------------
-![View on Heroku](https://chittera.herokuapp.com/)
+[View on Heroku](https://chittera.herokuapp.com/)
 
 How to run this app
 -------------------
