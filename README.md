@@ -44,6 +44,10 @@ Technologies used
 - Rspec
 - Timecop
 
+How to view this app
+--------------------
+![View on Heroku](https://chittera.herokuapp.com/)
+
 How to run this app
 -------------------
 Clone this repository:
